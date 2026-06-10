@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Transfer - CopyrightStellar</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "inverse-on-surface": "#2b3231",
+                      "primary": "#51dad9",
+                      "surface-container-low": "#171d1d",
+                      "on-tertiary-fixed-variant": "#783100",
+                      "on-primary-container": "#004141",
+                      "on-primary-fixed": "#002020",
+                      "surface": "#0e1414",
+                      "surface-container-lowest": "#090f0f",
+                      "on-error-container": "#ffdad6",
+                      "secondary-fixed-dim": "#ffb95f",
+                      "surface-tint": "#51dad9",
+                      "on-tertiary-container": "#632700",
+                      "outline": "#869393",
+                      "on-primary-fixed-variant": "#004f50",
+                      "surface-container-highest": "#303636",
+                      "background": "#0e1414",
+                      "tertiary-fixed": "#ffdbcb",
+                      "secondary-fixed": "#ffddb8",
+                      "primary-fixed": "#73f6f6",
+                      "secondary": "#ffb95f",
+                      "on-secondary": "#472a00",
+                      "on-tertiary-fixed": "#341100",
+                      "on-error": "#690005",
+                      "tertiary-container": "#ec8a54",
+                      "inverse-primary": "#006a6a",
+                      "error-container": "#93000a",
+                      "on-surface-variant": "#bbc9c8",
+                      "surface-container-high": "#252b2b",
+                      "error": "#ffb4ab",
+                      "on-surface": "#dee4e3",
+                      "surface-dim": "#0e1414",
+                      "surface-variant": "#303636",
+                      "secondary-container": "#ee9800",
+                      "on-secondary-fixed-variant": "#653e00",
+                      "on-secondary-fixed": "#2a1700",
+                      "inverse-surface": "#dee4e3",
+                      "primary-container": "#13b5b5",
+                      "on-background": "#dee4e3",
+                      "primary-fixed-dim": "#51dad9",
+                      "surface-container": "#1b2121",
+                      "surface-bright": "#343a3a",
+                      "on-secondary-container": "#5b3800",
+                      "on-primary": "#003737",
+                      "tertiary": "#ffb691",
+                      "outline-variant": "#3c4949",
+                      "on-tertiary": "#552100",
+                      "tertiary-fixed-dim": "#ffb691"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "container-max": "1280px",
+                      "lg": "40px",
+                      "md": "24px",
+                      "base": "4px",
+                      "xl": "64px",
+                      "xs": "8px",
+                      "sm": "16px",
+                      "gutter": "24px"
+              },
+              "fontFamily": {
+                      "headline-md": [
+                              "Inter"
+                      ],
+                      "headline-lg-mobile": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "body-sm": [
+                              "Inter"
+                      ],
+                      "display-lg": [
+                              "Inter"
+                      ],
+                      "label-md": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-sm": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-md": [
+                              "12px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(14, 20, 20, 0.45);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glow-hover:hover {
+            opacity: 0.55;
+            box-shadow: 0 0 15px rgba(19, 181, 181, 0.2);
+            transition: all 0.3s ease;
+        }
+        .teal-inner-shadow {
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.2);
+        }
+        .input-dark {
+            background-color: #0a0a12;
+            border: 1px solid #1e1e3a;
+        }
+        .input-dark:focus {
+            outline: none;
+            border-color: #13b5b5;
+            box-shadow: 0 0 0 2px rgba(19, 181, 181, 0.2);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-[#0a0a12] text-on-surface min-h-screen font-body-md text-body-md pb-[100px] overflow-x-hidden">
+<!-- TopNavBar (Web hidden, Mobile hidden due to "linear/transactional" intent, but keeping header for context) -->
+<header class="fixed top-0 w-full h-[64px] bg-surface/45 backdrop-blur-[10px] flex justify-between items-center px-[16px] z-50 border-b border-white/10 shadow-sm md:hidden">
+<a class="font-headline-md text-headline-md text-on-surface flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-primary">arrow_back</span>
+            CopyrightStellar
+        </a>
+</header>
+<main class="pt-[80px] px-[16px] max-w-[375px] mx-auto">
+<div class="mb-lg">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-xs">Transfer Asset</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Securely transfer ownership of your registered IP.</p>
+</div>
+<div class="glass-panel rounded-xl p-md flex flex-col gap-md">
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Asset ID</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">vpn_key</span>
+<input class="input-dark w-full h-12 rounded-lg pl-10 pr-4 font-body-sm text-body-sm text-on-surface placeholder:text-outline" placeholder="e.g. CS-992-881" type="text" value="CS-992-881"/>
+</div>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Recipient Public Key</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">account_balance_wallet</span>
+<input class="input-dark w-full h-12 rounded-lg pl-10 pr-4 font-body-sm text-body-sm text-on-surface placeholder:text-outline" placeholder="G..." type="text"/>
+</div>
+</div>
+<div class="glass-panel bg-black/20 rounded-lg p-sm border-l-2 border-l-secondary">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">info</span>
+<div>
+<span class="font-label-md text-label-md text-secondary uppercase block mb-1">Warning</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Transfers are immutable. Ensure the recipient address is correct on the Stellar Soroban network.</p>
+</div>
+</div>
+</div>
+<button class="w-full h-12 bg-[#13b5b5] text-white font-label-md text-label-md uppercase tracking-wider rounded-lg teal-inner-shadow glow-hover mt-sm flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[20px]">send</span>
+                Initiate Transfer
+            </button>
+</div>
+</main>
+</body></html>

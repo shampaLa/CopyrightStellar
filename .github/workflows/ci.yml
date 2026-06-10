@@ -1,0 +1,65 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  rust-contracts:
+    name: Rust Contract Tests
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        contract: [registry-contract, co-ownership-contract, license-dao-contract]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: wasm32-unknown-unknown
+
+      - name: Cache Cargo
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+            contracts/${{ matrix.contract }}/target
+          key: ${{ runner.os }}-cargo-${{ matrix.contract }}-${{ hashFiles('contracts/${{ matrix.contract }}/Cargo.toml') }}
+
+      - name: Run Tests — ${{ matrix.contract }}
+        working-directory: contracts/${{ matrix.contract }}
+        run: cargo test --verbose
+
+  frontend:
+    name: Frontend Tests & Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install Dependencies
+        run: npm ci --ignore-scripts
+
+      - name: Run Vitest
+        run: npm run test
+
+      - name: Build Next.js
+        run: npm run build
+        env:
+          NEXT_PUBLIC_REGISTRY_CONTRACT_ID: CDLZFC3SYJYDZT7K67VZ75HPJVIEUVNIXF47ZG2FB2RMQQVU2OISGN5
+          NEXT_PUBLIC_COOWNERSHIP_CONTRACT_ID: CBKKG6YBMQVEJVCZOPJRR5T6WPXZGCN4PVID5RLJWB3DMOYU6PC5D7E
+          NEXT_PUBLIC_LICENSE_DAO_CONTRACT_ID: CCWM3YOPUGUFR3FQVKPTQWEM27UOYN7GGWXHGR4OAVS4QHSGE5Y4JBZ
+          NEXT_PUBLIC_STELLAR_RPC_URL: https://soroban-rpc.testnet.stellar.org
+      - name: Install Playwright browsers
+        run: npx playwright install
+      - name: Run Playwright tests
+        run: npm run e2e

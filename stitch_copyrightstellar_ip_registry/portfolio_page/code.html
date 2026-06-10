@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Portfolio | CopyrightStellar</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-on-surface": "#2b3231",
+                    "primary": "#51dad9",
+                    "surface-container-low": "#171d1d",
+                    "on-tertiary-fixed-variant": "#783100",
+                    "on-primary-container": "#004141",
+                    "on-primary-fixed": "#002020",
+                    "surface": "#0e1414",
+                    "surface-container-lowest": "#090f0f",
+                    "on-error-container": "#ffdad6",
+                    "secondary-fixed-dim": "#ffb95f",
+                    "surface-tint": "#51dad9",
+                    "on-tertiary-container": "#632700",
+                    "outline": "#869393",
+                    "on-primary-fixed-variant": "#004f50",
+                    "surface-container-highest": "#303636",
+                    "background": "#0e1414",
+                    "tertiary-fixed": "#ffdbcb",
+                    "secondary-fixed": "#ffddb8",
+                    "primary-fixed": "#73f6f6",
+                    "secondary": "#ffb95f",
+                    "on-secondary": "#472a00",
+                    "on-tertiary-fixed": "#341100",
+                    "on-error": "#690005",
+                    "tertiary-container": "#ec8a54",
+                    "inverse-primary": "#006a6a",
+                    "error-container": "#93000a",
+                    "on-surface-variant": "#bbc9c8",
+                    "surface-container-high": "#252b2b",
+                    "error": "#ffb4ab",
+                    "on-surface": "#dee4e3",
+                    "surface-dim": "#0e1414",
+                    "surface-variant": "#303636",
+                    "secondary-container": "#ee9800",
+                    "on-secondary-fixed-variant": "#653e00",
+                    "on-secondary-fixed": "#2a1700",
+                    "inverse-surface": "#dee4e3",
+                    "primary-container": "#13b5b5",
+                    "on-background": "#dee4e3",
+                    "primary-fixed-dim": "#51dad9",
+                    "surface-container": "#1b2121",
+                    "surface-bright": "#343a3a",
+                    "on-secondary-container": "#5b3800",
+                    "on-primary": "#003737",
+                    "tertiary": "#ffb691",
+                    "outline-variant": "#3c4949",
+                    "on-tertiary": "#552100",
+                    "tertiary-fixed-dim": "#ffb691"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max": "1280px",
+                    "lg": "40px",
+                    "md": "24px",
+                    "base": "4px",
+                    "xl": "64px",
+                    "xs": "8px",
+                    "sm": "16px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "body-md": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "label-md": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "body-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                    "headline-lg-mobile": ["24px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                    "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                    "body-sm": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                    "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                    "label-md": ["12px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                    "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                    "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }]
+            }
+          }
+        }
+      }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-md text-body-md min-h-screen flex flex-col antialiased">
+<!-- TopNavBar -->
+<nav class="bg-surface/45 backdrop-blur-[10px] fixed top-0 w-full h-[64px] border-b border-white/10 shadow-sm z-50">
+<div class="flex justify-between items-center px-gutter max-w-container-max mx-auto h-full">
+<div class="font-headline-md text-headline-md text-on-surface tracking-tight">
+                CopyrightStellar
+            </div>
+<!-- Desktop Navigation -->
+<ul class="hidden md:flex space-x-md font-body-md text-body-md h-full items-center">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors hover:bg-white/5 duration-300 px-sm py-xs rounded-lg active:scale-95 transition-transform flex h-full items-center" href="#">Home</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors hover:bg-white/5 duration-300 px-sm py-xs rounded-lg active:scale-95 transition-transform flex h-full items-center" href="#">Register</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors hover:bg-white/5 duration-300 px-sm py-xs rounded-lg active:scale-95 transition-transform flex h-full items-center" href="#">Verify</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors hover:bg-white/5 duration-300 px-sm py-xs rounded-lg active:scale-95 transition-transform flex h-full items-center" href="#">Transfer</a></li>
+<li class="h-full flex items-center"><a class="text-primary font-bold border-b-2 border-primary h-[calc(100%-2px)] flex items-center px-sm mt-[2px]" href="#">Portfolio</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors hover:bg-white/5 duration-300 px-sm py-xs rounded-lg active:scale-95 transition-transform flex h-full items-center" href="#">Licenses</a></li>
+</ul>
+<button class="bg-primary-container text-white px-md py-xs rounded-full font-label-md text-label-md shadow-[inset_0_1px_0_rgba(255,255,255,0.2)] hover:bg-primary-container/90 transition-colors active:scale-95 flex items-center gap-xs border border-white/10">
+<span class="material-symbols-outlined text-[18px]">account_balance_wallet</span>
+                Connect Wallet
+            </button>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow pt-[104px] pb-xl px-gutter max-w-container-max mx-auto w-full">
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-lg gap-md border-b border-white/5 pb-md">
+<div>
+<h1 class="font-display-lg text-display-lg text-on-surface mb-xs">Your Portfolio</h1>
+<p class="text-on-surface-variant font-body-lg text-body-lg">Manage your registered IP assets and ownership shares.</p>
+</div>
+<div class="flex gap-sm">
+<div class="bg-surface/45 backdrop-blur-[10px] border border-white/10 px-md py-sm rounded-lg flex flex-col items-end">
+<span class="text-on-surface-variant font-label-md text-label-md uppercase tracking-wider">Total Assets</span>
+<span class="font-headline-md text-headline-md text-primary">4</span>
+</div>
+</div>
+</div>
+<!-- Portfolio Grid (Glass-morphic Cards) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<!-- Card 1 -->
+<div class="bg-surface/45 backdrop-blur-[10px] border border-white/10 rounded-xl overflow-hidden flex flex-col transition-all duration-300 hover:bg-surface/55 hover:shadow-[0_0_15px_rgba(19,181,181,0.15)] group">
+<div class="relative h-[240px] w-full border-b border-white/5 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A stunning digital artwork serving as a placeholder for a registered intellectual property asset. The composition features intricate, glowing geometric structures floating in a deep, dark void, embodying a 'Technical Elegance' aesthetic. The color palette relies heavily on deep obsidian blacks, punctuated by sharp, luminous Teal (#13b5b5) accents and subtle volumetric lighting. The imagery suggests high-tech security, immutable blockchain records, and cutting-edge digital creation in a professional, dark-mode environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgtcAhJNY__3sZNeStCM1XF-v0FsoScTH4RAv8KNBPh9CZE6XSWttrjmlrUf0eGwpHVv5gt8j_saLlFedi8lfKoGaWckiuk_6ycmg8vfsYi9TxPt5n76ARFzSxrAF9a4N3MZ9TMHl3dqypT3tE9RpfrUPWpHxidrfX9oVKSZVKTrbppdU78uMlFodTuWJ1LMZvRDEBDAGwmh_YWZL21jkNSiLnziKbM-1DCa7wj7_9dzfez4dr5O9FleTdKKSqFBeVYFLY4wsTWew"/>
+<div class="absolute top-sm right-sm bg-primary-container/20 border border-primary-container/50 backdrop-blur-md px-sm py-xs rounded-full flex items-center gap-base shadow-sm">
+<span class="w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_rgba(81,218,217,0.8)]"></span>
+<span class="text-primary font-label-md text-label-md uppercase tracking-wider">Registered</span>
+</div>
+</div>
+<div class="p-md flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-sm">
+<h2 class="font-headline-md text-headline-md text-on-surface truncate pr-sm">Project Echelon Logic</h2>
+<div class="bg-surface-variant border border-white/10 px-sm py-xs rounded-md flex flex-col items-center flex-shrink-0">
+<span class="text-on-surface-variant text-[10px] uppercase tracking-wider leading-none mb-[2px]">Ownership</span>
+<span class="font-headline-md text-headline-md text-on-surface leading-none">100%</span>
+</div>
+</div>
+<div class="flex items-center gap-sm text-on-surface-variant font-body-sm text-body-sm mb-lg">
+<span class="material-symbols-outlined text-[16px]">fingerprint</span>
+<span class="truncate font-mono text-[12px]">0x7A2...9B4F</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span>Tokenized Algorithim</span>
+</div>
+<div class="mt-auto pt-sm border-t border-white/5 flex gap-sm">
+<button class="flex-grow bg-secondary-container text-on-secondary-container border border-white/10 py-sm rounded-lg font-label-md text-label-md shadow-[inset_0_1px_0_rgba(255,255,255,0.1)] hover:bg-secondary-container/80 transition-colors flex items-center justify-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">swap_horiz</span>
+                            Transfer Share
+                        </button>
+<button class="w-12 h-12 flex items-center justify-center border border-white/10 rounded-lg text-on-surface-variant hover:text-primary hover:bg-white/5 transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface/45 backdrop-blur-[10px] border border-white/10 rounded-xl overflow-hidden flex flex-col transition-all duration-300 hover:bg-surface/55 hover:shadow-[0_0_15px_rgba(19,181,181,0.15)] group">
+<div class="relative h-[240px] w-full border-b border-white/5 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="An elegant visual representation of an audio file or musical composition registered on a blockchain. The scene displays an abstract, three-dimensional soundwave rendered in glowing Teal over a textured, matte black surface. Soft, ambient light catches the edges of the waveform, emphasizing a sleek, professional, dark-mode design language. The overall mood is sophisticated and technical, perfectly suited for an intellectual property registry platform focusing on secure, immutable digital rights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0r5l4Tqm50kQjQQhl8NCSSZpn-AIYsfAasfXFFRTvMAbHLVKb7q1_FYxSjj_ZWROAZeyC9qwi6TYmXNojrHjr5ofzJP4oIdZrNYdpk_6pwKO67YuQYMA8YQE4tWTVlbKiiSwQssZsawEGVRvisoYhgwpIZfTJxT3spqps-lQaa37_G6Ed-rJOvjYxqQbGi2z75bq8Op-OiF7nMuewFOXXj-mtaPBv6tGbJTj1B6BI1oRFzDcRlP_XilMtFgkMOMaqphjJCE8sYm4"/>
+<div class="absolute top-sm right-sm bg-primary-container/20 border border-primary-container/50 backdrop-blur-md px-sm py-xs rounded-full flex items-center gap-base shadow-sm">
+<span class="w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_rgba(81,218,217,0.8)]"></span>
+<span class="text-primary font-label-md text-label-md uppercase tracking-wider">Registered</span>
+</div>
+</div>
+<div class="p-md flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-sm">
+<h2 class="font-headline-md text-headline-md text-on-surface truncate pr-sm">Synthetix Stem Library</h2>
+<div class="bg-surface-variant border border-white/10 px-sm py-xs rounded-md flex flex-col items-center flex-shrink-0">
+<span class="text-on-surface-variant text-[10px] uppercase tracking-wider leading-none mb-[2px]">Ownership</span>
+<span class="font-headline-md text-headline-md text-on-surface leading-none">50%</span>
+</div>
+</div>
+<div class="flex items-center gap-sm text-on-surface-variant font-body-sm text-body-sm mb-lg">
+<span class="material-symbols-outlined text-[16px]">audio_file</span>
+<span class="truncate font-mono text-[12px]">0x3F1...2E88</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span>Audio Masters</span>
+</div>
+<div class="mt-auto pt-sm border-t border-white/5 flex gap-sm">
+<button class="flex-grow bg-secondary-container text-on-secondary-container border border-white/10 py-sm rounded-lg font-label-md text-label-md shadow-[inset_0_1px_0_rgba(255,255,255,0.1)] hover:bg-secondary-container/80 transition-colors flex items-center justify-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">swap_horiz</span>
+                            Transfer Share
+                        </button>
+<button class="w-12 h-12 flex items-center justify-center border border-white/10 rounded-lg text-on-surface-variant hover:text-primary hover:bg-white/5 transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface/45 backdrop-blur-[10px] border border-white/10 rounded-xl overflow-hidden flex flex-col transition-all duration-300 hover:bg-surface/55 hover:shadow-[0_0_15px_rgba(19,181,181,0.15)] group">
+<div class="relative h-[240px] w-full border-b border-white/5 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A high-fidelity 3D rendering of a conceptual, futuristic digital document or patent blueprint, symbolizing legally authoritative intellectual property. The document is constructed from translucent, glass-like panels with illuminated Teal text and schematic lines hovering slightly above the surface. The background is an endless, deep monochromatic space, providing high contrast and enhancing the 'Technical Elegance' and glassmorphism themes. The lighting is precise, casting subtle reflections that convey security and advanced technology." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDkoNUh4PV65WXZmDrd4rzmviq-MBKj_-eHw0y5ZQnqmkw-8BFCwxlyJjk-Hr3bvD5eBKJZzc3d4RuVqkZ7ZCQdHDZESdCWPB24mttKkIBCWH-KfzcKLHDu32vRHcOhAO5inrAnF0q-8Qe67ZZZImLNQ4HdbaP3lORSN9MMUuY568M5w4SND32kRPmYHJjJqci2yi5duhhuiA7jiD-4ZC81kS3-BFydg4DdTQQ7ash_nZlGd75pqIgn3tlV9_BFfzM8yHqAluYIS4"/>
+<div class="absolute top-sm right-sm bg-secondary-container/20 border border-secondary-container/50 backdrop-blur-md px-sm py-xs rounded-full flex items-center gap-base shadow-sm">
+<span class="w-2 h-2 rounded-full bg-secondary-container shadow-[0_0_8px_rgba(238,152,0,0.8)]"></span>
+<span class="text-secondary-container font-label-md text-label-md uppercase tracking-wider">Pending</span>
+</div>
+</div>
+<div class="p-md flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-sm">
+<h2 class="font-headline-md text-headline-md text-on-surface truncate pr-sm">Vortex Dynamics Patent</h2>
+<div class="bg-surface-variant border border-white/10 px-sm py-xs rounded-md flex flex-col items-center flex-shrink-0 opacity-50">
+<span class="text-on-surface-variant text-[10px] uppercase tracking-wider leading-none mb-[2px]">Ownership</span>
+<span class="font-headline-md text-headline-md text-on-surface leading-none">--</span>
+</div>
+</div>
+<div class="flex items-center gap-sm text-on-surface-variant font-body-sm text-body-sm mb-lg">
+<span class="material-symbols-outlined text-[16px]">description</span>
+<span class="truncate font-mono text-[12px]">Awaiting Minter</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span>Design Blueprint</span>
+</div>
+<div class="mt-auto pt-sm border-t border-white/5 flex gap-sm">
+<button class="flex-grow bg-surface-variant text-on-surface-variant border border-white/5 py-sm rounded-lg font-label-md text-label-md opacity-50 cursor-not-allowed flex items-center justify-center gap-xs" disabled="">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+                            Locked (Pending)
+                        </button>
+<button class="w-12 h-12 flex items-center justify-center border border-white/10 rounded-lg text-on-surface-variant hover:text-primary hover:bg-white/5 transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface/45 backdrop-blur-[10px] border border-white/10 rounded-xl overflow-hidden flex flex-col transition-all duration-300 hover:bg-surface/55 hover:shadow-[0_0_15px_rgba(19,181,181,0.15)] group">
+<div class="relative h-[240px] w-full border-b border-white/5 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A sophisticated, stylized visualization of a smart contract or proprietary algorithm acting as registered digital IP. The artwork shows cascading lines of abstract, glowing code and data nodes connected by thin, bright Teal energy threads against a deep, dark background (#0a0a12). The visual style emphasizes clarity, information density, and the secure, multi-layered nature of blockchain technology. The aesthetic is definitively dark-mode, professional, and devoid of overly flashy neon tropes, focusing instead on precise, tool-like utility." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCheOB04-jV7Ol8__IxzTaAuN0ZMNO1NIjur6U_WE4Fa_2XhBHCHKMi6230S_jaFU4o9FePek0kGW8uNHi9YR--79Fm4ESzb98wHN-hsv9hgXbxDCWA79JYy4KiCTjeXWoEIfJ73p0cR5KUbCy_J1Y_6ul2umfR4i28tFDruQkvxZRHFBFTid07dzx0pAUGTRLBGAEwIiST8dMvVEhcVgFwEXvNKyLvrI9DfsR1oSJlZC7ksIfxxHtFg2rBrJeqDoFvrUkQid2zS0A"/>
+<div class="absolute top-sm right-sm bg-primary-container/20 border border-primary-container/50 backdrop-blur-md px-sm py-xs rounded-full flex items-center gap-base shadow-sm">
+<span class="w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_rgba(81,218,217,0.8)]"></span>
+<span class="text-primary font-label-md text-label-md uppercase tracking-wider">Registered</span>
+</div>
+</div>
+<div class="p-md flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-sm">
+<h2 class="font-headline-md text-headline-md text-on-surface truncate pr-sm">Nexus Core Smart Contract</h2>
+<div class="bg-surface-variant border border-white/10 px-sm py-xs rounded-md flex flex-col items-center flex-shrink-0">
+<span class="text-on-surface-variant text-[10px] uppercase tracking-wider leading-none mb-[2px]">Ownership</span>
+<span class="font-headline-md text-headline-md text-on-surface leading-none">25%</span>
+</div>
+</div>
+<div class="flex items-center gap-sm text-on-surface-variant font-body-sm text-body-sm mb-lg">
+<span class="material-symbols-outlined text-[16px]">code</span>
+<span class="truncate font-mono text-[12px]">0x9C8...1A2B</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span>Source Code</span>
+</div>
+<div class="mt-auto pt-sm border-t border-white/5 flex gap-sm">
+<button class="flex-grow bg-secondary-container text-on-secondary-container border border-white/10 py-sm rounded-lg font-label-md text-label-md shadow-[inset_0_1px_0_rgba(255,255,255,0.1)] hover:bg-secondary-container/80 transition-colors flex items-center justify-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">swap_horiz</span>
+                            Transfer Share
+                        </button>
+<button class="w-12 h-12 flex items-center justify-center border border-white/10 rounded-lg text-on-surface-variant hover:text-primary hover:bg-white/5 transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest w-full py-md border-t border-white/5 mt-auto">
+<div class="flex flex-col md:flex-row justify-between items-center px-gutter max-w-container-max mx-auto">
+<span class="font-label-md text-label-md text-on-surface mb-sm md:mb-0">
+                © 2026 CopyrightStellar – Built on Stellar Soroban Testnet
+            </span>
+<ul class="flex space-x-md font-body-sm text-body-sm text-on-surface-variant">
+<li><a class="hover:text-primary transition-colors duration-300" href="#">GitHub</a></li>
+<li><a class="hover:text-primary transition-colors duration-300" href="#">Netlify</a></li>
+<li><a class="hover:text-primary transition-colors duration-300" href="#">Documentation</a></li>
+</ul>
+</div>
+</footer>
+</body></html>

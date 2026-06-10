@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Disputes | CopyrightStellar</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#2b3231",
+                        "primary": "#51dad9",
+                        "surface-container-low": "#171d1d",
+                        "on-tertiary-fixed-variant": "#783100",
+                        "on-primary-container": "#004141",
+                        "on-primary-fixed": "#002020",
+                        "surface": "#0e1414",
+                        "surface-container-lowest": "#090f0f",
+                        "on-error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#ffb95f",
+                        "surface-tint": "#51dad9",
+                        "on-tertiary-container": "#632700",
+                        "outline": "#869393",
+                        "on-primary-fixed-variant": "#004f50",
+                        "surface-container-highest": "#303636",
+                        "background": "#0e1414",
+                        "tertiary-fixed": "#ffdbcb",
+                        "secondary-fixed": "#ffddb8",
+                        "primary-fixed": "#73f6f6",
+                        "secondary": "#ffb95f",
+                        "on-secondary": "#472a00",
+                        "on-tertiary-fixed": "#341100",
+                        "on-error": "#690005",
+                        "tertiary-container": "#ec8a54",
+                        "inverse-primary": "#006a6a",
+                        "error-container": "#93000a",
+                        "on-surface-variant": "#bbc9c8",
+                        "surface-container-high": "#252b2b",
+                        "error": "#ffb4ab",
+                        "on-surface": "#dee4e3",
+                        "surface-dim": "#0e1414",
+                        "surface-variant": "#303636",
+                        "secondary-container": "#ee9800",
+                        "on-secondary-fixed-variant": "#653e00",
+                        "on-secondary-fixed": "#2a1700",
+                        "inverse-surface": "#dee4e3",
+                        "primary-container": "#13b5b5",
+                        "on-background": "#dee4e3",
+                        "primary-fixed-dim": "#51dad9",
+                        "surface-container": "#1b2121",
+                        "surface-bright": "#343a3a",
+                        "on-secondary-container": "#5b3800",
+                        "on-primary": "#003737",
+                        "tertiary": "#ffb691",
+                        "outline-variant": "#3c4949",
+                        "on-tertiary": "#552100",
+                        "tertiary-fixed-dim": "#ffb691"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "lg": "40px",
+                        "md": "24px",
+                        "base": "4px",
+                        "xl": "64px",
+                        "xs": "8px",
+                        "sm": "16px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-sm": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "label-md": ["12px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #0a0a12;
+            color: #dee4e3;
+        }
+        .glass-panel {
+            background: rgba(0, 0, 0, 0.45);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glass-panel:hover {
+            background: rgba(0, 0, 0, 0.55);
+            box-shadow: 0 0 15px rgba(19, 181, 181, 0.2);
+        }
+        .btn-primary {
+            background-color: #13b5b5;
+            color: #ffffff;
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.2);
+        }
+        .btn-amber {
+            background-color: #d97706; /* amber-600 approx */
+            color: #ffffff;
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.2);
+        }
+        .chip-pending {
+            color: #d97706;
+            background: rgba(217, 119, 6, 0.1);
+            border: 1px solid rgba(217, 119, 6, 0.2);
+        }
+        .chip-resolved {
+            color: #13b5b5;
+            background: rgba(19, 181, 181, 0.1);
+            border: 1px solid rgba(19, 181, 181, 0.2);
+        }
+        .table-row:hover {
+            background-color: rgba(255, 255, 255, 0.03);
+            border-left: 2px solid #13b5b5;
+        }
+        .modal-overlay {
+            background: rgba(10, 10, 18, 0.8);
+            backdrop-filter: blur(5px);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col font-body-md text-body-md">
+<!-- Top NavBar (Suppressed - Task-Focused) -->
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-xl pb-lg px-gutter max-w-container-max mx-auto w-full relative z-10">
+<div class="flex justify-between items-center mb-lg">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface mb-xs hidden md:block">Dispute Resolution</h1>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-xs md:hidden">Dispute Resolution</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Manage and vote on intellectual property disputes using Quadratic Voting.</p>
+</div>
+<button class="btn-amber px-sm py-xs rounded-lg font-label-md text-label-md flex items-center gap-xs hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                New Dispute
+            </button>
+</div>
+<!-- Glassmorphism Data Table -->
+<div class="glass-panel rounded-xl overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-white/5 font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">
+<th class="px-md py-sm">Claim ID</th>
+<th class="px-md py-sm">Reporter</th>
+<th class="px-md py-sm">Contested Asset</th>
+<th class="px-md py-sm">Status</th>
+<th class="px-md py-sm text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="font-body-sm text-body-sm text-on-surface">
+<!-- Row 1: Pending -->
+<tr class="table-row border-b border-white/5 transition-colors border-l-2 border-transparent">
+<td class="px-md py-sm font-mono">#DP-8924</td>
+<td class="px-md py-sm flex items-center gap-xs">
+<div class="w-6 h-6 rounded-full bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px]">person</span>
+</div>
+                                0x7A...9F21
+                            </td>
+<td class="px-md py-sm">Quantum Leap Codebase</td>
+<td class="px-md py-sm">
+<span class="chip-pending px-2 py-1 rounded-full font-label-md text-label-md inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">schedule</span>
+                                    Pending Review
+                                </span>
+</td>
+<td class="px-md py-sm text-right">
+<button class="text-primary hover:text-primary-fixed transition-colors font-label-md text-label-md" onclick="openModal()">Manage</button>
+</td>
+</tr>
+<!-- Row 2: Resolved -->
+<tr class="table-row border-b border-white/5 transition-colors border-l-2 border-transparent">
+<td class="px-md py-sm font-mono">#DP-8910</td>
+<td class="px-md py-sm flex items-center gap-xs">
+<div class="w-6 h-6 rounded-full bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px]">person</span>
+</div>
+                                0x3B...4C8A
+                            </td>
+<td class="px-md py-sm">Neon Nights Audio Track</td>
+<td class="px-md py-sm">
+<span class="chip-resolved px-2 py-1 rounded-full font-label-md text-label-md inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">check_circle</span>
+                                    Resolved
+                                </span>
+</td>
+<td class="px-md py-sm text-right">
+<button class="text-on-surface-variant hover:text-on-surface transition-colors font-label-md text-label-md">View Record</button>
+</td>
+</tr>
+<!-- Row 3: Pending -->
+<tr class="table-row border-b border-white/5 transition-colors border-l-2 border-transparent">
+<td class="px-md py-sm font-mono">#DP-8875</td>
+<td class="px-md py-sm flex items-center gap-xs">
+<div class="w-6 h-6 rounded-full bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px]">person</span>
+</div>
+                                0x9D...1E55
+                            </td>
+<td class="px-md py-sm">SynthWave Vector Pack</td>
+<td class="px-md py-sm">
+<span class="chip-pending px-2 py-1 rounded-full font-label-md text-label-md inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">schedule</span>
+                                    Pending Review
+                                </span>
+</td>
+<td class="px-md py-sm text-right">
+<button class="text-primary hover:text-primary-fixed transition-colors font-label-md text-label-md" onclick="openModal()">Manage</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</main>
+<!-- Modal Detail View -->
+<div class="fixed inset-0 z-50 hidden items-center justify-center p-sm md:p-gutter" id="disputeModal">
+<div class="modal-overlay absolute inset-0" onclick="closeModal()"></div>
+<div class="glass-panel relative z-10 w-full max-w-2xl rounded-xl flex flex-col max-h-[921px]">
+<!-- Header -->
+<div class="p-md border-b border-white/5 flex justify-between items-center shrink-0">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Dispute #DP-8924</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Quantum Leap Codebase</p>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface" onclick="closeModal()">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<!-- Body -->
+<div class="p-md overflow-y-auto flex-grow space-y-md">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div class="bg-surface-container-low p-sm rounded-lg border border-white/5">
+<span class="font-label-md text-label-md text-on-surface-variant block mb-xs">Reporter</span>
+<span class="font-body-sm text-body-sm text-on-surface font-mono">0x7A23C8...9F21</span>
+</div>
+<div class="bg-surface-container-low p-sm rounded-lg border border-white/5">
+<span class="font-label-md text-label-md text-on-surface-variant block mb-xs">Original Registrant</span>
+<span class="font-body-sm text-body-sm text-on-surface font-mono">0x4F11B9...8D33</span>
+</div>
+</div>
+<div>
+<h3 class="font-body-md text-body-md text-on-surface font-semibold mb-xs">Claim Description</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant bg-surface-container-lowest p-sm rounded border border-white/5">
+                        The codebase registered under #IP-7721 contains exact function replications from my prior open-source repository without proper attribution or adherence to the GPL license. Code similarity analysis shows a 94% match in core encryption modules.
+                    </p>
+</div>
+<!-- Quadratic Voting Section -->
+<div class="border-t border-white/5 pt-md mt-md">
+<h3 class="font-body-md text-body-md text-primary font-semibold mb-sm flex items-center gap-xs">
+<span class="material-symbols-outlined">how_to_vote</span>
+                        Community Resolution (Quadratic Voting)
+                    </h3>
+<div class="bg-surface-container-highest p-md rounded-lg border border-primary/20">
+<div class="flex flex-col md:flex-row items-center justify-between gap-md mb-md">
+<div class="text-center md:text-left">
+<span class="font-label-md text-label-md text-on-surface-variant block uppercase">Voice Credits Available</span>
+<span class="font-headline-md text-headline-md text-on-surface">100</span>
+</div>
+<div class="text-center md:text-right">
+<span class="font-label-md text-label-md text-on-surface-variant block uppercase">Cost of Next Vote</span>
+<span class="font-headline-md text-headline-md text-secondary" id="voteCost">1</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<!-- Vote Uphold -->
+<div class="bg-surface p-sm rounded border border-white/5 flex flex-col items-center">
+<span class="font-body-sm text-body-sm text-on-surface mb-sm">Uphold Claim</span>
+<div class="flex items-center gap-sm">
+<button class="w-8 h-8 rounded-full bg-surface-container-highest hover:bg-white/10 flex items-center justify-center border border-white/10" onclick="updateVote('uphold', -1)">
+<span class="material-symbols-outlined text-[18px]">remove</span>
+</button>
+<span class="font-headline-md text-headline-md w-8 text-center text-primary" id="upholdCount">0</span>
+<button class="w-8 h-8 rounded-full bg-surface-container-highest hover:bg-white/10 flex items-center justify-center border border-white/10" onclick="updateVote('uphold', 1)">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+</div>
+<!-- Vote Reject -->
+<div class="bg-surface p-sm rounded border border-white/5 flex flex-col items-center">
+<span class="font-body-sm text-body-sm text-on-surface mb-sm">Reject Claim</span>
+<div class="flex items-center gap-sm">
+<button class="w-8 h-8 rounded-full bg-surface-container-highest hover:bg-white/10 flex items-center justify-center border border-white/10" onclick="updateVote('reject', -1)">
+<span class="material-symbols-outlined text-[18px]">remove</span>
+</button>
+<span class="font-headline-md text-headline-md w-8 text-center text-secondary" id="rejectCount">0</span>
+<button class="w-8 h-8 rounded-full bg-surface-container-highest hover:bg-white/10 flex items-center justify-center border border-white/10" onclick="updateVote('reject', 1)">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<div class="p-md border-t border-white/5 flex justify-end gap-sm shrink-0 bg-surface/50">
+<button class="px-sm py-xs rounded border border-white/10 hover:bg-white/5 transition-colors font-label-md text-label-md" onclick="closeModal()">Cancel</button>
+<button class="btn-primary px-sm py-xs rounded font-label-md text-label-md">Submit Votes</button>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest w-full py-md border-t border-white/5 flex flex-col md:flex-row justify-between items-center px-gutter max-w-container-max mx-auto mt-auto">
+<div class="font-label-md text-label-md text-on-surface mb-xs md:mb-0">
+            © 2026 CopyrightStellar – Built on Stellar Soroban Testnet
+        </div>
+<div class="flex gap-sm">
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">GitHub</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Netlify</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Documentation</a>
+</div>
+</footer>
+<script>
+        // Modal Logic
+        const modal = document.getElementById('disputeModal');
+        
+        function openModal() {
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeModal() {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = '';
+        }
+
+        // Simple Quadratic Voting Logic Simulation
+        let upholdVotes = 0;
+        let rejectVotes = 0;
+        const maxCredits = 100;
+
+        function updateVote(type, change) {
+            if (type === 'uphold') {
+                const newVotes = Math.max(0, upholdVotes + change);
+                const totalCost = Math.pow(newVotes, 2) + Math.pow(rejectVotes, 2);
+                if (totalCost <= maxCredits) {
+                    upholdVotes = newVotes;
+                    document.getElementById('upholdCount').innerText = upholdVotes;
+                }
+            } else {
+                const newVotes = Math.max(0, rejectVotes + change);
+                const totalCost = Math.pow(upholdVotes, 2) + Math.pow(newVotes, 2);
+                if (totalCost <= maxCredits) {
+                    rejectVotes = newVotes;
+                    document.getElementById('rejectCount').innerText = rejectVotes;
+                }
+            }
+            
+            // Calculate cost for next generic vote (just illustrating UI)
+            const activeVotes = upholdVotes > 0 ? upholdVotes : (rejectVotes > 0 ? rejectVotes : 0);
+            const nextCost = Math.pow(activeVotes + 1, 2) - Math.pow(activeVotes, 2);
+            document.getElementById('voteCost').innerText = nextCost;
+        }
+    </script>
+</body></html>

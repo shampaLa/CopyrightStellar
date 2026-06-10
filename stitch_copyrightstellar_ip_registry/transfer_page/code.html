@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Transfer - CopyrightStellar</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#2b3231",
+                        "primary": "#51dad9",
+                        "surface-container-low": "#171d1d",
+                        "on-tertiary-fixed-variant": "#783100",
+                        "on-primary-container": "#004141",
+                        "on-primary-fixed": "#002020",
+                        "surface": "#0e1414",
+                        "surface-container-lowest": "#090f0f",
+                        "on-error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#ffb95f",
+                        "surface-tint": "#51dad9",
+                        "on-tertiary-container": "#632700",
+                        "outline": "#869393",
+                        "on-primary-fixed-variant": "#004f50",
+                        "surface-container-highest": "#303636",
+                        "background": "#0e1414",
+                        "tertiary-fixed": "#ffdbcb",
+                        "secondary-fixed": "#ffddb8",
+                        "primary-fixed": "#73f6f6",
+                        "secondary": "#ffb95f",
+                        "on-secondary": "#472a00",
+                        "on-tertiary-fixed": "#341100",
+                        "on-error": "#690005",
+                        "tertiary-container": "#ec8a54",
+                        "inverse-primary": "#006a6a",
+                        "error-container": "#93000a",
+                        "on-surface-variant": "#bbc9c8",
+                        "surface-container-high": "#252b2b",
+                        "error": "#ffb4ab",
+                        "on-surface": "#dee4e3",
+                        "surface-dim": "#0e1414",
+                        "surface-variant": "#303636",
+                        "secondary-container": "#ee9800",
+                        "on-secondary-fixed-variant": "#653e00",
+                        "on-secondary-fixed": "#2a1700",
+                        "inverse-surface": "#dee4e3",
+                        "primary-container": "#13b5b5",
+                        "on-background": "#dee4e3",
+                        "primary-fixed-dim": "#51dad9",
+                        "surface-container": "#1b2121",
+                        "surface-bright": "#343a3a",
+                        "on-secondary-container": "#5b3800",
+                        "on-primary": "#003737",
+                        "tertiary": "#ffb691",
+                        "outline-variant": "#3c4949",
+                        "on-tertiary": "#552100",
+                        "tertiary-fixed-dim": "#ffb691"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "lg": "40px",
+                        "md": "24px",
+                        "base": "4px",
+                        "xl": "64px",
+                        "xs": "8px",
+                        "sm": "16px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-sm": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "label-md": ["12px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom Utility for inner border simulating glass edge */
+        .glass-edge {
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+        }
+        .btn-inner-shadow {
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col relative overflow-x-hidden selection:bg-primary/30">
+<!-- Ambient Background Glow -->
+<div class="fixed inset-0 pointer-events-none z-0 flex justify-center items-center">
+<div class="w-[800px] h-[800px] bg-primary/5 rounded-full blur-[120px] opacity-50"></div>
+</div>
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full h-[64px] border-b border-white/10 shadow-sm bg-surface/45 backdrop-blur-[10px] z-50 transition-all duration-300">
+<div class="flex justify-between items-center px-gutter max-w-container-max mx-auto h-full w-full">
+<!-- Brand Logo -->
+<div class="font-headline-md text-headline-md text-on-surface flex items-center gap-2 cursor-pointer">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">hexagon</span>
+                CopyrightStellar
+            </div>
+<!-- Navigation Links (Desktop) -->
+<ul class="hidden md:flex space-x-lg h-full items-center">
+<li class="h-full flex items-center">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors hover:bg-white/5 transition-all duration-300 px-sm py-2 rounded-md h-auto flex items-center" href="#">
+                        Home
+                    </a>
+</li>
+<li class="h-full flex items-center">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors hover:bg-white/5 transition-all duration-300 px-sm py-2 rounded-md h-auto flex items-center" href="#">
+                        Register
+                    </a>
+</li>
+<li class="h-full flex items-center">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors hover:bg-white/5 transition-all duration-300 px-sm py-2 rounded-md h-auto flex items-center" href="#">
+                        Verify
+                    </a>
+</li>
+<li class="h-full flex items-center relative">
+<a class="font-body-md text-body-md text-primary font-bold border-b-2 border-primary pb-1 hover:bg-white/5 transition-all duration-300 px-sm pt-2 rounded-t-md h-auto flex items-center active:scale-95 transition-transform" href="#">
+                        Transfer
+                    </a>
+</li>
+<li class="h-full flex items-center">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors hover:bg-white/5 transition-all duration-300 px-sm py-2 rounded-md h-auto flex items-center" href="#">
+                        Portfolio
+                    </a>
+</li>
+<li class="h-full flex items-center">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors hover:bg-white/5 transition-all duration-300 px-sm py-2 rounded-md h-auto flex items-center" href="#">
+                        Licenses
+                    </a>
+</li>
+</ul>
+<!-- Trailing Action -->
+<div class="flex items-center">
+<button class="bg-surface-container-high hover:bg-surface-variant border border-white/10 text-on-surface font-label-md text-label-md px-md py-2 rounded-full transition-all duration-300 hover:text-primary flex items-center gap-xs glass-edge">
+<span class="material-symbols-outlined text-[16px]">account_balance_wallet</span>
+                    Connect Wallet
+                </button>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow z-10 pt-[120px] pb-xl px-gutter flex flex-col items-center w-full">
+<div class="max-w-2xl w-full flex flex-col items-center">
+<!-- Headline -->
+<div class="text-center mb-lg">
+<h1 class="font-headline-lg text-headline-lg text-on-surface mb-xs tracking-tight">Send XLM</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Securely transfer tokens on the Soroban network.</p>
+</div>
+<!-- Transfer Card -->
+<div class="w-full bg-surface/45 backdrop-blur-[10px] rounded-xl glass-edge p-lg shadow-2xl relative overflow-hidden group">
+<!-- Decorative top glow -->
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-[1px] bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-50"></div>
+<form class="flex flex-col gap-md" id="transferForm">
+<!-- Section 1: From / Balance -->
+<div class="flex flex-col sm:flex-row sm:justify-between sm:items-end pb-sm border-b border-white/5 gap-sm sm:gap-0">
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">From Account</label>
+<div class="flex items-center gap-xs">
+<div class="bg-surface-container-highest rounded-full px-sm py-1 flex items-center gap-2 glass-edge">
+<div class="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
+<span class="font-body-sm text-body-sm text-on-surface font-mono">GCS3...4D2Z</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col sm:items-end gap-xs">
+<label class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Available Balance</label>
+<div class="font-headline-md text-headline-md text-primary flex items-baseline gap-1">
+                                12.345 <span class="font-label-md text-label-md text-primary/70">XLM</span>
+</div>
+</div>
+</div>
+<!-- Section 2: Recipient Input -->
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider flex items-center gap-2" for="recipient">
+<span class="material-symbols-outlined text-[16px]">person</span>
+                            Recipient Address
+                        </label>
+<div class="relative">
+<input class="w-full bg-surface-container-lowest border border-surface-variant rounded-lg py-sm px-sm text-on-surface font-body-md text-body-md font-mono placeholder:text-on-surface-variant/50 focus:ring-2 focus:ring-primary/50 focus:border-primary focus:outline-none transition-all duration-300" id="recipient" placeholder="G..." required="" type="text"/>
+<button class="absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">content_paste</span>
+</button>
+</div>
+</div>
+<!-- Section 3: Amount Input -->
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider flex items-center gap-2" for="amount">
+<span class="material-symbols-outlined text-[16px]">payments</span>
+                            Amount
+                        </label>
+<div class="relative">
+<input class="w-full bg-surface-container-lowest border border-surface-variant rounded-lg py-sm pl-sm pr-[80px] text-on-surface font-headline-md text-headline-md placeholder:text-on-surface-variant/50 focus:ring-2 focus:ring-primary/50 focus:border-primary focus:outline-none transition-all duration-300" id="amount" min="0" placeholder="0.00" required="" step="0.01" type="number"/>
+<div class="absolute right-3 top-1/2 -translate-y-1/2 flex items-center gap-2">
+<span class="font-label-md text-label-md text-on-surface-variant">XLM</span>
+<button class="bg-surface-variant hover:bg-surface-container-high text-primary font-label-md text-[10px] px-2 py-1 rounded transition-colors uppercase" type="button">Max</button>
+</div>
+</div>
+</div>
+<!-- Divider -->
+<div class="w-full h-[1px] bg-gradient-to-r from-transparent via-white/5 to-transparent my-xs"></div>
+<!-- Send Action -->
+<button class="w-full bg-primary hover:bg-primary-fixed text-on-primary font-label-md text-label-md rounded-lg py-sm flex items-center justify-center gap-2 btn-inner-shadow transition-all duration-300 hover:shadow-[0_0_15px_rgba(19,181,181,0.2)] active:scale-[0.98]" id="sendBtn" type="submit">
+<span class="material-symbols-outlined" id="btnIcon">send</span>
+<span id="btnText">Initiate Transfer</span>
+<span class="material-symbols-outlined animate-spin hidden" id="btnSpinner">progress_activity</span>
+</button>
+</form>
+<!-- Post-send Collapsible Panel (Hidden initially) -->
+<div class="hidden mt-md pt-md border-t border-primary/20 bg-primary/5 -mx-lg -mb-lg px-lg pb-lg rounded-b-xl transition-all duration-500 ease-in-out opacity-0 translate-y-4" id="successPanel">
+<div class="flex items-center justify-between mb-sm">
+<div class="flex items-center gap-2">
+<div class="bg-primary/20 rounded-full p-1 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-[16px]">check_circle</span>
+</div>
+<span class="font-label-md text-label-md text-primary tracking-widest uppercase">Success</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Just now</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-md text-label-md text-on-surface-variant">Transaction Hash</span>
+<div class="flex items-center justify-between bg-surface-container-lowest border border-white/5 rounded p-2">
+<span class="font-body-sm text-body-sm text-on-surface font-mono truncate max-w-[80%] opacity-80 hover:opacity-100 transition-opacity cursor-default">
+                                4a9b...7f21e8d9c0a1b2c3d4e5f6
+                            </span>
+<button class="text-primary hover:text-primary-fixed transition-colors p-1" title="View on Explorer" type="button">
+<span class="material-symbols-outlined text-[16px]">open_in_new</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-md border-t border-white/5 bg-surface-container-lowest z-10 mt-auto">
+<div class="flex flex-col md:flex-row justify-between items-center px-gutter max-w-container-max mx-auto gap-md md:gap-0">
+<!-- Copyright -->
+<div class="font-body-sm text-body-sm text-on-surface-variant text-center md:text-left">
+                © 2026 CopyrightStellar – Built on Stellar Soroban Testnet
+            </div>
+<!-- Links -->
+<ul class="flex items-center space-x-md">
+<li>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">GitHub</a>
+</li>
+<li>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Netlify</a>
+</li>
+<li>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Documentation</a>
+</li>
+</ul>
+</div>
+</footer>
+<!-- Interactive Logic -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('transferForm');
+            const btn = document.getElementById('sendBtn');
+            const btnText = document.getElementById('btnText');
+            const btnIcon = document.getElementById('btnIcon');
+            const btnSpinner = document.getElementById('btnSpinner');
+            const successPanel = document.getElementById('successPanel');
+            const amountInput = document.getElementById('amount');
+            const recipientInput = document.getElementById('recipient');
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                // Simple validation check before animation
+                if(!recipientInput.value || !amountInput.value) return;
+
+                // Loading State
+                btn.disabled = true;
+                btn.classList.add('opacity-80', 'cursor-not-allowed');
+                btnText.textContent = 'Processing...';
+                btnIcon.classList.add('hidden');
+                btnSpinner.classList.remove('hidden');
+                successPanel.classList.add('hidden');
+                successPanel.classList.remove('opacity-100', 'translate-y-0');
+
+                // Simulate Network Request
+                setTimeout(() => {
+                    // Success State
+                    btn.disabled = false;
+                    btn.classList.remove('opacity-80', 'cursor-not-allowed');
+                    btnText.textContent = 'Transfer Complete';
+                    btnSpinner.classList.add('hidden');
+                    btnIcon.textContent = 'done';
+                    btnIcon.classList.remove('hidden');
+                    
+                    // Show Panel
+                    successPanel.classList.remove('hidden');
+                    // Small delay to allow display:block to render before transitioning opacity
+                    setTimeout(() => {
+                        successPanel.classList.add('opacity-100', 'translate-y-0');
+                    }, 50);
+
+                    // Reset form fields
+                    amountInput.value = '';
+                    recipientInput.value = '';
+
+                    // Reset button after 3 seconds
+                    setTimeout(() => {
+                        btnText.textContent = 'Initiate Transfer';
+                        btnIcon.textContent = 'send';
+                    }, 3000);
+
+                }, 2000);
+            });
+        });
+    </script>
+</body></html>

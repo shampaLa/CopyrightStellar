@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CopyrightStellar - Split Sheet</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#2b3231",
+                        "primary": "#51dad9",
+                        "surface-container-low": "#171d1d",
+                        "on-tertiary-fixed-variant": "#783100",
+                        "on-primary-container": "#004141",
+                        "on-primary-fixed": "#002020",
+                        "surface": "#0e1414",
+                        "surface-container-lowest": "#090f0f",
+                        "on-error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#ffb95f",
+                        "surface-tint": "#51dad9",
+                        "on-tertiary-container": "#632700",
+                        "outline": "#869393",
+                        "on-primary-fixed-variant": "#004f50",
+                        "surface-container-highest": "#303636",
+                        "background": "#0e1414",
+                        "tertiary-fixed": "#ffdbcb",
+                        "secondary-fixed": "#ffddb8",
+                        "primary-fixed": "#73f6f6",
+                        "secondary": "#ffb95f",
+                        "on-secondary": "#472a00",
+                        "on-tertiary-fixed": "#341100",
+                        "on-error": "#690005",
+                        "tertiary-container": "#ec8a54",
+                        "inverse-primary": "#006a6a",
+                        "error-container": "#93000a",
+                        "on-surface-variant": "#bbc9c8",
+                        "surface-container-high": "#252b2b",
+                        "error": "#ffb4ab",
+                        "on-surface": "#dee4e3",
+                        "surface-dim": "#0e1414",
+                        "surface-variant": "#303636",
+                        "secondary-container": "#ee9800",
+                        "on-secondary-fixed-variant": "#653e00",
+                        "on-secondary-fixed": "#2a1700",
+                        "inverse-surface": "#dee4e3",
+                        "primary-container": "#13b5b5",
+                        "on-background": "#dee4e3",
+                        "primary-fixed-dim": "#51dad9",
+                        "surface-container": "#1b2121",
+                        "surface-bright": "#343a3a",
+                        "on-secondary-container": "#5b3800",
+                        "on-primary": "#003737",
+                        "tertiary": "#ffb691",
+                        "outline-variant": "#3c4949",
+                        "on-tertiary": "#552100",
+                        "tertiary-fixed-dim": "#ffb691"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "lg": "40px",
+                        "md": "24px",
+                        "base": "4px",
+                        "xl": "64px",
+                        "xs": "8px",
+                        "sm": "16px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-sm": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "label-md": ["12px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-panel {
+            background-color: rgba(0, 0, 0, 0.45);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glass-panel:hover {
+            background-color: rgba(0, 0, 0, 0.55);
+            box-shadow: 0 0 15px rgba(19, 181, 181, 0.2);
+            transition: all 0.3s ease;
+        }
+        .teal-glow-focus:focus-within {
+            box-shadow: 0 0 0 2px #13b5b5, 0 0 10px rgba(19, 181, 181, 0.1);
+            background-color: rgba(19, 181, 181, 0.05);
+        }
+        
+        /* Custom Scrollbar for better UI */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a12;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e1e3a;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #51dad9;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen flex flex-col font-body-md overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
+<!-- Ambient Background Elements -->
+<div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+<div class="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] bg-primary/5 rounded-full blur-[120px]"></div>
+<div class="absolute bottom-[-20%] right-[-10%] w-[40%] h-[40%] bg-secondary/5 rounded-full blur-[100px]"></div>
+</div>
+<!-- TopNavBar -->
+<nav class="bg-surface/45 backdrop-blur-[10px] fixed top-0 w-full h-[64px] border-b border-white/10 shadow-sm z-50 transition-all duration-300">
+<div class="flex justify-between items-center px-gutter max-w-container-max mx-auto h-full">
+<!-- Brand -->
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="fingerprint" data-weight="fill" style="font-variation-settings: 'FILL' 1;">fingerprint</span>
+<span class="font-headline-md text-headline-md text-on-surface tracking-tight">CopyrightStellar</span>
+</div>
+<!-- Navigation Links (Hidden on Mobile) -->
+<div class="hidden md:flex items-center gap-md h-full">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md h-full flex items-center px-sm hover:bg-white/5 duration-300" href="#">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md h-full flex items-center px-sm hover:bg-white/5 duration-300" href="#">Register</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md h-full flex items-center px-sm hover:bg-white/5 duration-300" href="#">Verify</a>
+<a class="text-primary font-bold border-b-2 border-primary h-full flex items-center px-sm mt-[2px] hover:bg-white/5 duration-300" href="#">Transfer</a> <!-- Highlighted as it relates to splits/transfers -->
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md h-full flex items-center px-sm hover:bg-white/5 duration-300" href="#">Portfolio</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md h-full flex items-center px-sm hover:bg-white/5 duration-300" href="#">Licenses</a>
+</div>
+<!-- Trailing Action -->
+<div class="flex items-center gap-sm">
+<!-- Mobile Menu Button -->
+<button class="md:hidden text-on-surface-variant hover:text-primary p-2">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<button class="hidden sm:flex bg-surface-container-high border border-white/10 px-sm py-xs rounded-full items-center gap-xs text-on-surface font-label-md text-label-md hover:bg-white/5 transition-all active:scale-95">
+<div class="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
+                    Connect Wallet
+                </button>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-[104px] pb-xl px-sm md:px-gutter relative z-10">
+<div class="max-w-container-max mx-auto h-full flex flex-col lg:flex-row gap-gutter">
+<!-- Left Column: Context & Instructions (Bento Style) -->
+<div class="w-full lg:w-1/3 flex flex-col gap-md">
+<!-- Header Card -->
+<div class="glass-panel rounded-xl p-md flex flex-col gap-sm">
+<div class="flex items-center gap-sm mb-xs">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="pie_chart">pie_chart</span>
+</div>
+<div>
+<h1 class="font-headline-md text-headline-md text-on-surface">Split Sheet</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Define multi-creator ownership</p>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                        Configure the immutable ownership distribution for your intellectual property on the Stellar network. Ensure all collaborators are correctly assigned their percentage before confirming the contract.
+                    </p>
+<div class="mt-xs pt-sm border-t border-white/5">
+<div class="flex justify-between items-center font-label-md text-label-md">
+<span class="text-on-surface-variant">Target Network</span>
+<span class="text-primary bg-primary/10 px-2 py-1 rounded">Soroban Testnet</span>
+</div>
+</div>
+</div>
+<!-- Guidance Card -->
+<div class="glass-panel rounded-xl p-md flex flex-col gap-sm">
+<h2 class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-xs">
+<span class="material-symbols-outlined text-secondary text-lg" data-icon="lightbulb">lightbulb</span>
+                        Best Practices
+                    </h2>
+<ul class="font-body-sm text-body-sm text-on-surface-variant space-y-3">
+<li class="flex items-start gap-xs">
+<span class="material-symbols-outlined text-primary text-sm mt-1" data-icon="check_circle">check_circle</span>
+                            Use verified Stellar public keys for all collaborators.
+                        </li>
+<li class="flex items-start gap-xs">
+<span class="material-symbols-outlined text-primary text-sm mt-1" data-icon="check_circle">check_circle</span>
+                            The total allocation must precisely equal 100%.
+                        </li>
+<li class="flex items-start gap-xs">
+<span class="material-symbols-outlined text-primary text-sm mt-1" data-icon="check_circle">check_circle</span>
+                            Once registered, changes require multi-sig approval.
+                        </li>
+</ul>
+</div>
+<!-- Visualization Placeholder -->
+<div class="glass-panel rounded-xl p-md hidden lg:flex flex-col items-center justify-center min-h-[200px] relative overflow-hidden group">
+<div class="absolute inset-0 bg-cover bg-center opacity-40 group-hover:opacity-60 transition-opacity duration-500" data-alt="A dark, sleek, high-tech digital abstract representation of a pie chart or data distribution. Glowing teal and subtle amber neon lines construct geometric segments in a glassmorphism style against a deep void-like background. The image conveys themes of digital equity, smart contracts, and precise percentages." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCvbeHnpHh7OY9GxdbrFHWPgYemsRunbYChCAuVu2TcmOivFPM9iYcJRolVtwKa_sSiCrDTkiOSayxz6WCzNTx5JNrUAHyL1MKLzvxqhfbCSJonPjPeCfaSxtpJeZQVQORS_VSGU3JzgraAW1CUbwsoYOTrx6j4Bgty4XEvuGhzCh4bwSQ6YWUssumi4PhOsGEFAeES6B43M6LWK6cpT3wGQ-6AtKWCC5GTw4xKYO1wEGnVM0rwwEFrWTTxMgosJrNK4DCl8xRcPJo')"></div>
+<div class="relative z-10 flex flex-col items-center">
+<span class="material-symbols-outlined text-4xl text-primary/80 mb-2" data-icon="donut_large">donut_large</span>
+<span class="font-label-md text-label-md text-on-surface tracking-wider uppercase opacity-80">Distribution Visualization</span>
+</div>
+</div>
+</div>
+<!-- Right Column: Interactive Form -->
+<div class="w-full lg:w-2/3 flex flex-col">
+<div class="glass-panel rounded-xl flex flex-col flex-grow relative overflow-hidden">
+<!-- Form Header -->
+<div class="p-md border-b border-white/5 flex justify-between items-center bg-surface-container-lowest/30">
+<h3 class="font-body-lg text-body-lg font-semibold text-on-surface">Ownership Configuration</h3>
+<!-- Dynamic Validation Pill -->
+<div class="flex items-center gap-xs px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 transition-colors duration-300" id="validation-status">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="check" id="validation-icon">check</span>
+<span class="font-label-md text-label-md text-primary font-bold tracking-wider" id="validation-text">Total: 100%</span>
+</div>
+</div>
+<!-- Dynamic Rows Container -->
+<div class="p-sm md:p-md flex flex-col gap-sm overflow-y-auto max-h-[500px]" id="creators-container">
+<!-- Row 1 (Primary) -->
+<div class="flex flex-col sm:flex-row gap-sm items-start sm:items-center bg-surface-container-lowest/50 p-sm rounded-lg border border-white/5 hover:bg-white/5 transition-colors group">
+<!-- Address Input -->
+<div class="flex-grow w-full relative teal-glow-focus rounded-md transition-shadow">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-on-surface-variant text-sm" data-icon="wallet">wallet</span>
+</div>
+<input class="w-full bg-[#0a0a12] border border-[#1e1e3a] text-on-surface font-body-md text-body-md rounded-md py-2 pl-9 pr-3 focus:outline-none focus:border-transparent" readonly="" type="text" value="GBSX...A2M9 (You)"/>
+</div>
+<!-- Share Input & Actions -->
+<div class="flex items-center gap-xs w-full sm:w-auto justify-end">
+<div class="relative w-24 teal-glow-focus rounded-md transition-shadow">
+<input class="share-input w-full bg-[#0a0a12] border border-[#1e1e3a] text-on-surface font-body-md text-body-md rounded-md py-2 pl-3 pr-8 focus:outline-none focus:border-transparent text-right font-mono" max="100" min="0" type="number" value="60"/>
+<div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+<span class="text-on-surface-variant font-body-sm">%</span>
+</div>
+</div>
+<button class="p-2 text-on-surface-variant opacity-50 cursor-not-allowed rounded hover:bg-white/5 transition-colors" title="Cannot remove primary creator">
+<span class="material-symbols-outlined" data-icon="lock">lock</span>
+</button>
+</div>
+</div>
+<!-- Row 2 -->
+<div class="creator-row flex flex-col sm:flex-row gap-sm items-start sm:items-center bg-surface-container-lowest/50 p-sm rounded-lg border border-white/5 hover:bg-white/5 transition-colors group">
+<!-- Address Dropdown/Input -->
+<div class="flex-grow w-full relative teal-glow-focus rounded-md transition-shadow">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-on-surface-variant text-sm" data-icon="person">person</span>
+</div>
+<select class="w-full bg-[#0a0a12] border border-[#1e1e3a] text-on-surface font-body-md text-body-md rounded-md py-2 pl-9 pr-8 focus:outline-none focus:border-transparent appearance-none cursor-pointer">
+<option disabled="" value="">Select Collaborator...</option>
+<option selected="" value="addr1">Elena R. (GCHX...9L0P)</option>
+<option value="addr2">Marcus T. (GDK4...2V1B)</option>
+<option value="custom">Enter custom address...</option>
+</select>
+<div class="absolute inset-y-0 right-0 pr-2 flex items-center pointer-events-none text-on-surface-variant">
+<span class="material-symbols-outlined text-sm" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<!-- Share Input & Actions -->
+<div class="flex items-center gap-xs w-full sm:w-auto justify-end">
+<div class="relative w-24 teal-glow-focus rounded-md transition-shadow">
+<input class="share-input w-full bg-[#0a0a12] border border-[#1e1e3a] text-on-surface font-body-md text-body-md rounded-md py-2 pl-3 pr-8 focus:outline-none focus:border-transparent text-right font-mono" max="100" min="0" type="number" value="40"/>
+<div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+<span class="text-on-surface-variant font-body-sm">%</span>
+</div>
+</div>
+<button class="remove-btn p-2 text-on-surface-variant hover:text-error rounded hover:bg-error/10 transition-colors" title="Remove Creator">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Add Creator Action -->
+<div class="px-md py-sm border-t border-white/5 bg-surface-container-lowest/30">
+<button class="flex items-center gap-xs text-primary font-label-md text-label-md hover:text-primary-fixed transition-colors py-2 px-3 rounded-md hover:bg-primary/5 active:scale-95 duration-200" id="add-creator-btn">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+                            ADD CREATOR
+                        </button>
+</div>
+<!-- Footer Actions -->
+<div class="mt-auto p-md border-t border-white/5 bg-[#0a0a12]/80 flex flex-col sm:flex-row justify-end gap-sm items-center">
+<button class="w-full sm:w-auto px-6 py-2.5 rounded border border-primary text-primary font-label-md text-label-md hover:bg-primary/5 transition-colors duration-300">
+                            SAVE DRAFT
+                        </button>
+<!-- Primary Submit Button -->
+<button class="w-full sm:w-auto bg-primary-container text-on-primary-container font-label-md text-label-md px-8 py-2.5 rounded shadow-[inset_0_1px_0_rgba(255,255,255,0.2)] hover:bg-primary transition-all duration-300 active:scale-95 flex items-center justify-center gap-xs" id="submit-btn">
+<span class="material-symbols-outlined text-sm" data-icon="verified">verified</span>
+                            CONFIRM SPLIT
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest border-t border-white/5 w-full py-md mt-auto z-10 relative">
+<div class="flex flex-col md:flex-row justify-between items-center px-gutter max-w-container-max mx-auto gap-sm">
+<span class="font-label-md text-label-md text-on-surface opacity-60">© 2026 CopyrightStellar – Built on Stellar Soroban Testnet</span>
+<div class="flex items-center gap-md">
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">GitHub</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Netlify</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Documentation</a>
+</div>
+</div>
+</footer>
+<!-- Inline Logic for Form Validation & Interaction -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.getElementById('creators-container');
+            const addBtn = document.getElementById('add-creator-btn');
+            const validationStatus = document.getElementById('validation-status');
+            const validationIcon = document.getElementById('validation-icon');
+            const validationText = document.getElementById('validation-text');
+            const submitBtn = document.getElementById('submit-btn');
+
+            // Template for new row
+            const rowTemplate = `
+                <div class="creator-row flex flex-col sm:flex-row gap-sm items-start sm:items-center bg-surface-container-lowest/50 p-sm rounded-lg border border-white/5 hover:bg-white/5 transition-colors group animate-[fadeIn_0.3s_ease-out]">
+                    <div class="flex-grow w-full relative teal-glow-focus rounded-md transition-shadow">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <span class="material-symbols-outlined text-on-surface-variant text-sm" data-icon="person">person</span>
+                        </div>
+                        <input type="text" placeholder="Enter Stellar Address (G...)" class="w-full bg-[#0a0a12] border border-[#1e1e3a] text-on-surface font-body-md text-body-md rounded-md py-2 pl-9 pr-3 focus:outline-none focus:border-transparent">
+                    </div>
+                    
+                    <div class="flex items-center gap-xs w-full sm:w-auto justify-end">
+                        <div class="relative w-24 teal-glow-focus rounded-md transition-shadow">
+                            <input type="number" value="0" min="0" max="100" class="share-input w-full bg-[#0a0a12] border border-[#1e1e3a] text-on-surface font-body-md text-body-md rounded-md py-2 pl-3 pr-8 focus:outline-none focus:border-transparent text-right font-mono">
+                            <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                                <span class="text-on-surface-variant font-body-sm">%</span>
+                            </div>
+                        </div>
+                        
+                        <button class="remove-btn p-2 text-on-surface-variant hover:text-error rounded hover:bg-error/10 transition-colors" title="Remove Creator">
+                            <span class="material-symbols-outlined" data-icon="delete">delete</span>
+                        </button>
+                    </div>
+                </div>
+            `;
+
+            // Function to calculate total and update validation UI
+            function updateValidation() {
+                const inputs = document.querySelectorAll('.share-input');
+                let total = 0;
+                inputs.forEach(input => {
+                    total += parseInt(input.value) || 0;
+                });
+
+                if (total === 100) {
+                    // Valid state (Teal)
+                    validationStatus.className = 'flex items-center gap-xs px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 transition-colors duration-300';
+                    validationIcon.textContent = 'check';
+                    validationIcon.className = 'material-symbols-outlined text-primary text-sm';
+                    validationText.textContent = 'Total: 100%';
+                    validationText.className = 'font-label-md text-label-md text-primary font-bold tracking-wider';
+                    
+                    submitBtn.classList.remove('opacity-50', 'cursor-not-allowed', 'bg-surface-variant', 'text-on-surface-variant');
+                    submitBtn.classList.add('bg-primary-container', 'text-on-primary-container', 'hover:bg-primary', 'active:scale-95');
+                    submitBtn.disabled = false;
+                } else {
+                    // Invalid state (Red)
+                    validationStatus.className = 'flex items-center gap-xs px-3 py-1.5 rounded-full bg-error/10 border border-error/20 transition-colors duration-300';
+                    validationIcon.textContent = 'error';
+                    validationIcon.className = 'material-symbols-outlined text-error text-sm';
+                    validationText.textContent = `Total: ${total}% (Must be 100%)`;
+                    validationText.className = 'font-label-md text-label-md text-error font-bold tracking-wider';
+
+                    submitBtn.classList.add('opacity-50', 'cursor-not-allowed', 'bg-surface-variant', 'text-on-surface-variant');
+                    submitBtn.classList.remove('bg-primary-container', 'text-on-primary-container', 'hover:bg-primary', 'active:scale-95');
+                    submitBtn.disabled = true;
+                }
+            }
+
+            // Event listener for dynamically added inputs and remove buttons
+            container.addEventListener('input', (e) => {
+                if (e.target.classList.contains('share-input')) {
+                    // Simple constraint to prevent negative numbers visually
+                    if(e.target.value < 0) e.target.value = 0;
+                    if(e.target.value > 100) e.target.value = 100;
+                    updateValidation();
+                }
+            });
+
+            container.addEventListener('click', (e) => {
+                const removeBtn = e.target.closest('.remove-btn');
+                if (removeBtn) {
+                    const row = removeBtn.closest('.creator-row');
+                    if (row) {
+                        row.style.opacity = '0';
+                        row.style.transform = 'translateY(-10px)';
+                        row.style.transition = 'all 0.2s ease-out';
+                        setTimeout(() => {
+                            row.remove();
+                            updateValidation();
+                        }, 200);
+                    }
+                }
+            });
+
+            // Add new creator row
+            addBtn.addEventListener('click', () => {
+                const tempDiv = document.createElement('div');
+                tempDiv.innerHTML = rowTemplate;
+                const newRow = tempDiv.firstElementChild;
+                container.appendChild(newRow);
+                
+                // Add a small animation style inline just for smooth appearance
+                if(!document.getElementById('fade-anim-style')) {
+                    const style = document.createElement('style');
+                    style.id = 'fade-anim-style';
+                    style.textContent = `@keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }`;
+                    document.head.appendChild(style);
+                }
+                
+                updateValidation();
+                // Auto-scroll to bottom of container
+                container.scrollTop = container.scrollHeight;
+            });
+
+            // Initial calculation
+            updateValidation();
+        });
+    </script>
+</body></html>
