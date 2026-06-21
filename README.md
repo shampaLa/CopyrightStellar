@@ -10,7 +10,7 @@ CopyrightStellar is a full-stack decentralized intellectual property registry bu
 *   **Co-Ownership Contract**: `CBKKG6YBMQVEJVCZOPJRR5T6WPXZGCN4PVID5RLJWB3DMOYU6PC5D7E`
 *   **License DAO Contract**: `CCWM3YOPUGUFR3FQVKPTQWEM27UOYN7GGWXHGR4OAVS4QHSGE5Y4JBZ`
 *   **Stellar Network**: Testnet
-*   **Live Demo**: https://copyrightstellar.netlify.app
+*   **Live Demo**: [https://copyrightstellar.netlify.app](https://shiny-puppy-c4fb73.netlify.app/)
 
 ---
 
