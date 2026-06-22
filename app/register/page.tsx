@@ -40,6 +40,23 @@ export default function RegisterPage() {
         hashBytes[i] = parseInt(fileHash.substring(i * 2, i * 2 + 2), 16);
       }
 
+      // Pre-check if hash already exists to show a clean error message
+      try {
+        const verifyVal = await stellar.simulateRead({
+          publicKey,
+          contractId: REGISTRY_CONTRACT_ID,
+          method: 'verify',
+          args: [StellarSdk.xdr.ScVal.scvBytes(Buffer.from(hashBytes))],
+        });
+        if (verifyVal) {
+          throw new Error('This file hash has already been registered on-chain.');
+        }
+      } catch (readErr: any) {
+        if (readErr.message.includes('already been registered')) {
+          throw readErr;
+        }
+      }
+
       const args = [
         StellarSdk.nativeToScVal(publicKey, { type: 'address' }),
         StellarSdk.xdr.ScVal.scvBytes(Buffer.from(hashBytes)),
