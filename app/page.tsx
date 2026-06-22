@@ -69,7 +69,7 @@ export default function Home() {
       <main className="relative overflow-hidden">
         {/* Hero Glow Effects */}
         <div className="hero-glow top-[-200px] left-[20%]" />
-        <div className="hero-glow top-[100px] right-[-100px]" style={{ background: 'radial-gradient(circle, rgba(129,140,248,0.1), transparent 70%)' }} />
+        <div className="hero-glow top-[100px] right-[-100px]" style={{ background: 'radial-gradient(circle, rgba(81,218,217,0.1), transparent 70%)' }} />
 
         {/* Hero Section */}
         <section className="relative mx-auto max-w-7xl px-4 pt-24 pb-16 text-center">
@@ -110,9 +110,9 @@ export default function Home() {
         <section className="mx-auto max-w-7xl px-4 py-8">
           <div className="grid grid-cols-3 gap-4 max-w-md mx-auto mb-16">
             {[
-              { level: 'L1', label: 'Proof-of-Existence', color: 'from-emerald-500 to-emerald-700' },
-              { level: 'L2', label: 'Co-Ownership', color: 'from-blue-500 to-blue-700' },
-              { level: 'L3', label: 'Licensing & DAO', color: 'from-indigo-500 to-purple-700' },
+              { level: 'L1', label: 'Proof-of-Existence', color: 'from-brand-400 to-brand-600' },
+              { level: 'L2', label: 'Co-Ownership', color: 'from-amber-400 to-amber-600' },
+              { level: 'L3', label: 'Licensing & DAO', color: 'from-orange-400 to-orange-600' },
             ].map((item) => (
               <div key={item.level} className="rounded-lg border border-surface-600 p-4 bg-surface-900/20 text-center">
                 <div className={`text-2xl font-bold bg-gradient-to-r ${item.color} bg-clip-text text-transparent`}>
