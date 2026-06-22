@@ -198,6 +198,7 @@ export class StellarHelper {
   async pollTransaction(hash: string): Promise<{ status: 'PENDING' | 'SUCCESS' | 'FAILED'; returnValue?: string }> {
     try {
       const response = await this.rpcServer.getTransaction(hash);
+      console.log('getTransaction response status:', response.status);
 
       if (response.status === StellarSdk.SorobanRpc.Api.GetTransactionStatus.NOT_FOUND) {
         return { status: 'PENDING' };
@@ -211,7 +212,8 @@ export class StellarHelper {
           ? String(StellarSdk.scValToNative(response.returnValue))
           : undefined,
       };
-    } catch {
+    } catch (err) {
+      console.error('pollTransaction caught error:', err);
       return { status: 'PENDING' };
     }
   }
