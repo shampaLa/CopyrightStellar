@@ -14,12 +14,12 @@ import {
 
 export class StellarHelper {
   private server: StellarSdk.Horizon.Server;
-  private rpcServer: StellarSdk.SorobanRpc.Server;
+  private rpcServer: StellarSdk.rpc.Server;
   private kit: StellarWalletsKit | null = null;
 
   constructor() {
     this.server = new StellarSdk.Horizon.Server(HORIZON_URL);
-    this.rpcServer = new StellarSdk.SorobanRpc.Server(STELLAR_RPC_URL);
+    this.rpcServer = new StellarSdk.rpc.Server(STELLAR_RPC_URL);
   }
 
   /* ─── Wallet ─── */
@@ -142,7 +142,7 @@ export class StellarHelper {
 
     const simulation = await this.rpcServer.simulateTransaction(tx);
 
-    if (StellarSdk.SorobanRpc.Api.isSimulationError(simulation)) {
+    if (StellarSdk.rpc.Api.isSimulationError(simulation)) {
       const errMsg = simulation.error || 'Simulation failed';
       if (errMsg.toLowerCase().includes('balance') || errMsg.toLowerCase().includes('insufficient')) {
         throw new Error('Insufficient XLM balance for transaction fees.');
@@ -150,7 +150,7 @@ export class StellarHelper {
       throw new Error(`Contract simulation failed: ${errMsg}`);
     }
 
-    const preparedTx = StellarSdk.SorobanRpc.assembleTransaction(tx, simulation).build();
+    const preparedTx = StellarSdk.rpc.assembleTransaction(tx, simulation).build();
 
     const { signedTxXdr } = await this.getKit().signTransaction(preparedTx.toXDR(), {
       networkPassphrase: NETWORK_PASSPHRASE,
@@ -186,7 +186,7 @@ export class StellarHelper {
 
     const simulation = await this.rpcServer.simulateTransaction(tx);
 
-    if (StellarSdk.SorobanRpc.Api.isSimulationError(simulation)) {
+    if (StellarSdk.rpc.Api.isSimulationError(simulation)) {
       throw new Error(`Read failed: ${simulation.error}`);
     }
 
@@ -200,10 +200,10 @@ export class StellarHelper {
       const response = await this.rpcServer.getTransaction(hash);
       console.log('getTransaction response status:', response.status);
 
-      if (response.status === StellarSdk.SorobanRpc.Api.GetTransactionStatus.NOT_FOUND) {
+      if (response.status === StellarSdk.rpc.Api.GetTransactionStatus.NOT_FOUND) {
         return { status: 'PENDING' };
       }
-      if (response.status === StellarSdk.SorobanRpc.Api.GetTransactionStatus.FAILED) {
+      if (response.status === StellarSdk.rpc.Api.GetTransactionStatus.FAILED) {
         return { status: 'FAILED' };
       }
       return {

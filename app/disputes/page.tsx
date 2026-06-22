@@ -162,7 +162,7 @@ export default function DisputesPage() {
         StellarSdk.nativeToScVal(publicKey, { type: 'address' }),
         StellarSdk.nativeToScVal(Number(voteDisputeId), { type: 'u32' }),
         StellarSdk.nativeToScVal(BigInt(voteCount), { type: 'i128' }),
-        StellarSdk.nativeToScVal(supportPlaintiff, { type: 'bool' }),
+        StellarSdk.nativeToScVal(supportPlaintiff),
       ];
 
       const { hash } = await stellar.buildAndSignTx({
