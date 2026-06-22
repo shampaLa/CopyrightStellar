@@ -1,122 +1,103 @@
-# 📜 CopyrightStellar — Decentralized IP & Copyright Registry
+<div align="center">
+  <h1>CopyrightStellar</h1>
+  <p><strong>A Decentralized Intellectual Property & Copyright Registry on Stellar Soroban</strong></p>
 
-![CopyrightStellar Cover](./sub%20assets/ui.png)
+  <p>
+    <a href="https://shiny-puppy-c4fb73.netlify.app/">Live Demo</a> •
+    <a href="https://drive.google.com/file/d/1InGqwPrEn3J1PaMBYqgN-ZzLph-UcmaM/view?usp=sharing">Video Presentation</a>
+  </p>
 
-CopyrightStellar is a full-stack decentralized intellectual property registry built on **Stellar Soroban**. Creators can register cryptographic proof-of-existence for their works, define fractional co-ownership (split sheets), create license templates, and resolve plagiarism disputes through community-driven **Quadratic Voting**.
+  <img src="./sub%20assets/ui.png" alt="CopyrightStellar Interface" width="800"/>
+</div>
 
----
+## Table of Contents
+- [Overview](#overview)
+- [System Architecture](#system-architecture)
+- [Submission Requirements Matrix](#submission-requirements-matrix)
+- [Smart Contract Infrastructure](#smart-contract-infrastructure)
+- [Continuous Integration & Delivery](#continuous-integration--delivery)
+- [Testing & Quality Assurance](#testing--quality-assurance)
+- [Local Development Setup](#local-development-setup)
+- [License](#license)
 
-## 🚀 Live Demo & Video Presentation
-- **Live Netlify Demo**: [https://shiny-puppy-c4fb73.netlify.app/](https://shiny-puppy-c4fb73.netlify.app/)
-- **Demo Video (1-2 mins)**: [Watch on Google Drive](https://drive.google.com/file/d/1InGqwPrEn3J1PaMBYqgN-ZzLph-UcmaM/view?usp=sharing)
+## Overview
+CopyrightStellar is a comprehensive, full-stack decentralized application (dApp) designed to manage intellectual property rights. Built on the **Stellar Soroban** network, it provides creators with immutable proof-of-existence, fractional co-ownership structuring, decentralized licensing agreements, and a community-governed plagiarism dispute resolution mechanism.
 
----
+## System Architecture
 
-## 📋 Submission Checklist Requirements
+The application is structured into three primary tiers:
 
-✅ **Public GitHub repository**: [CopyrightStellar GitHub Repository](https://github.com/shampaLa/CopyrightStellar)
-✅ **README with complete documentation**: *You are reading it!*
-✅ **Minimum 10+ meaningful commits**: Achieved throughout the development lifecycle (17+ workflow runs).
-✅ **Live demo link**: [Deployed on Netlify](https://shiny-puppy-c4fb73.netlify.app/)
-✅ **Contract deployment address**: Included below.
-✅ **Transaction hash for contract interaction**: Included below.
-✅ **Screenshot showing Mobile UI**: Included below.
-✅ **Screenshot showing CI/CD pipeline running**: Included below.
-✅ **Screenshot showing Test output with 3+ passing tests**: Included below (runs within CI/CD & local terminal).
-✅ **Demo video link (1–2 minutes)**: [Linked Here](https://drive.google.com/file/d/1InGqwPrEn3J1PaMBYqgN-ZzLph-UcmaM/view?usp=sharing)
+1. **Advanced Smart Contracts (Rust/Soroban):** Securely handles state management, event streaming, and asset control. Employs optimized memory management, custom error boundaries, and efficient `DataKey` enums.
+2. **Frontend Client (Next.js/React):** A highly responsive, mobile-optimized interface constructed with Next.js 14, Tailwind CSS, and Framer Motion. It interfaces asynchronously with the Stellar RPC.
+3. **Wallet Integration:** Directly integrates with standard Stellar wallets (e.g., Freighter) using the `@creit.tech/stellar-wallets-kit` to sign and authorize transactions securely.
 
----
+<div align="center">
+  <img src="./sub%20assets/mobui.png" alt="Mobile Responsive UI" width="300"/>
+</div>
 
-## 🛰️ Deployed Contract Addresses & On-Chain Proof
+## Submission Requirements Matrix
 
-All smart contracts are successfully compiled, optimized, and deployed on the **Stellar Soroban Testnet**.
+| Requirement | Fulfillment & Location |
+|-------------|------------------------|
+| **Public GitHub Repository** | Complete. Maintained on [GitHub](https://github.com/shampaLa/CopyrightStellar). |
+| **Comprehensive README** | Complete. This documentation covers all architectural and deployment aspects. |
+| **Commit History** | Complete. Contains over 10+ meaningful commits (17+ CI/CD runs). |
+| **Live Demo Link** | Complete. Hosted securely at [Netlify](https://shiny-puppy-c4fb73.netlify.app/). |
+| **Demo Video** | Complete. [View Presentation (Google Drive)](https://drive.google.com/file/d/1InGqwPrEn3J1PaMBYqgN-ZzLph-UcmaM/view?usp=sharing). |
+| **Contract Addresses** | Complete. See [Smart Contract Infrastructure](#smart-contract-infrastructure). |
+| **Transaction Hash** | Complete. Hash: `c5f1419f6a0d06808a595ba36156c1b8df0e79f414f311d3df6e47170af6da0d` ([View on Explorer](https://stellar.expert/explorer/testnet/tx/c5f1419f6a0d06808a595ba36156c1b8df0e79f414f311d3df6e47170af6da0d)) |
+| **Mobile Responsive UI** | Complete. Demonstrated in the live demo and architectural screenshots. |
+| **CI/CD Pipeline** | Complete. See [Continuous Integration & Delivery](#continuous-integration--delivery). |
+| **Test Output** | Complete. Over 10+ passing tests across Rust and TypeScript ecosystems. |
 
-- **Registry Contract**: `CDK247D6PUHXDKAJHOTQNPG4V3JKLDYKXIERTONDDH3NMCUPE3PGEFCY`
-- **Co-Ownership Contract**: `CBM6H2CGIAJDBQ5K5747Z6RQWCP355WVBAF3LH7ECJAX4AOIEUDQLTGX`
-- **License DAO Contract**: `CC3466SOHIWRKY62APTMWLMOX552JDYH5ZI3IDHOXAWYB64SN7MUCNJG`
-- **Network**: Testnet
+## Smart Contract Infrastructure
 
-### 🔗 Transaction Hash (Contract Interaction)
-- **Initialize Registry Contract**: `c5f1419f6a0d06808a595ba36156c1b8df0e79f414f311d3df6e47170af6da0d`
-- **Explorer Link**: [View on Stellar Expert](https://stellar.expert/explorer/testnet/tx/c5f1419f6a0d06808a595ba36156c1b8df0e79f414f311d3df6e47170af6da0d)
+All smart contracts are currently deployed on the **Stellar Soroban Testnet**. The system utilizes inter-contract communication to enforce rules securely across domains.
 
----
+| Contract | Address | Functionality |
+|----------|---------|---------------|
+| **Registry** | `CDK247D6PUHXDKAJHOTQNPG4V3JKLDYKXIERTONDDH3NMCUPE3PGEFCY` | Computes local SHA-256 hashes and permanently registers ownership metadata. |
+| **Co-Ownership** | `CBM6H2CGIAJDBQ5K5747Z6RQWCP355WVBAF3LH7ECJAX4AOIEUDQLTGX` | Enables fractional split sheets (basis points) and native ownership transfers. |
+| **License DAO** | `CC3466SOHIWRKY62APTMWLMOX552JDYH5ZI3IDHOXAWYB64SN7MUCNJG` | Governs automated licensing agreements and Quadratic Voting for dispute resolution. |
 
-## 🎨 UI/UX & Responsive Design
+### Event Streaming & Real-Time Updates
+The smart contracts are designed to emit custom Soroban events upon state changes. The Next.js frontend polls the Stellar RPC to capture these events, ensuring the user interface remains synchronized with the ledger with minimal latency.
 
-### Mobile Responsive UI
-We ensure a seamless user experience across all devices with our responsive, fluid Tailwind CSS architecture, delivering a premium "charcoal/teal/amber" dark theme aesthetic without breaking usability on smaller screens.
+## Continuous Integration & Delivery
 
-![Mobile Responsive UI](./sub%20assets/mobui.png)
+<img src="./sub%20assets/cicd.png" alt="CI/CD Pipeline" width="800"/>
 
-### Desktop UI Overview
-![Desktop UI](./sub%20assets/ui.png)
+We have established a robust deployment workflow utilizing GitHub Actions to ensure zero-regression integration. Upon every push to the `main` branch, the pipeline automatically:
 
----
+1. **Provisions Environments:** Initializes Node.js and Rust environments.
+2. **Contract Compilation & Matrix Testing:** Compiles the `wasm32-unknown-unknown` targets and executes the `cargo test` suites across all three contracts in parallel.
+3. **Frontend E2E & Unit Testing:** Validates the UI logic utilizing Vitest and performs End-to-End browser tests via Playwright.
+4. **Production Build:** Generates the highly optimized static export bundle for Next.js.
 
-## 🌟 Advanced Features (Levels 1, 2, & 3)
+## Testing & Quality Assurance
 
-### 1️⃣ Advanced Smart Contract Development & Proof-of-Existence
-- **Registry Contract**: Safely registers a local client-side SHA-256 hash (the file itself never leaves the creator's machine) onto the Soroban ledger, storing metadata like creator address, title, description, and timestamp.
-- **Production-Ready Practices**: State handling uses efficient `DataKey` enums, custom `Error` types, proper bounds checking, and optimized memory management in Rust.
+The application adheres to test-driven development principles, covering both ledger-side logic and client-side interactions. 
+- **Rust Contract Tests (`cargo test`):** Strict verification of fractional distributions, registry duplication prevention, and state integrity.
+- **Frontend Unit Tests (Vitest):** Mocks boundary conditions for data conversion and rendering logic.
+- **End-to-End Tests (Playwright):** Simulates the user journey, including mock wallet authentication flows, to ensure resilient exception handling and loading states.
 
-### 2️⃣ Inter-Contract Communication & Co-Ownership
-- **Co-Ownership Splits**: The `co-ownership-contract` interacts smoothly across the dApp. Creators register fractional ownership split sheets in basis points (e.g., 60% / 40%), validating they always sum to exactly 10,000 (100%).
-- Shares are natively transferable between addresses while retaining strict access controls.
+## Local Development Setup
 
-### 3️⃣ Event Streaming & Real-Time Updates
-- Custom Soroban events are emitted directly from the contracts (e.g., `topics: ["LicenseCreated", license_id]`).
-- The frontend efficiently polls for these events to update the UI asynchronously, reflecting real-time transaction finality.
+### Prerequisites
+- **Node.js**: v22.x or higher
+- **Rust**: Latest stable toolchain with the `wasm32-unknown-unknown` target installed.
+- **Wallet Extension**: Freighter (configured to Stellar Testnet)
 
-### 4️⃣ Error Handling & Loading States
-- Robust exception handling handles user declines (e.g., rejecting Freighter wallet signature requests), insufficient balance errors, or contract simulation errors.
-- **Loading states**: Graceful spinners, disabled buttons during asynchronous requests, and toast notifications (success/error popups) provide premium user feedback.
+### Installation Guide
 
-### 5️⃣ Licensing & Plagiarism Dispute DAO (Quadratic Voting)
-- **License Templates**: Define CC, MIT, or custom licenses directly on-chain.
-- **Quadratic Voting DAO**: Fair and Sybil-resistant mechanism to resolve plagiarism disputes. It calculates $cost = votes^2$, democratizing the voting weight of the community.
-
----
-
-## 🧪 Testing (Contracts & Frontend)
-
-![CI/CD Pipeline & Tests](./sub%20assets/cicd.png)
-
-We adopted a test-driven approach with over **10+ tests** enforcing correctness:
-- **Contracts (Rust `cargo test`)**: 13 unit tests strictly verify split distributions, registry overwriting prevention, and proper event emission.
-- **Frontend (Vitest & Playwright)**: Unit tests for utility helper logic (stroops/XLM conversions) and End-to-End (E2E) UI testing isolating the wallet connection flow via Playwright mocking. 
-
-*(See `test-results` or the CI/CD screenshot for visual proof of 3+ passing tests).*
-
----
-
-## 🚀 CI/CD Pipeline Setup
-
-Our robust GitHub Actions workflow automates the following on every push/PR to `main`:
-1. **Rust Smart Contract Builds**: Checks out the repo, installs the `wasm32` target, caches cargo registries, and runs tests across the 3 smart contracts in a matrix.
-2. **Frontend Test Matrix**: Tests components and utilities with Vitest.
-3. **E2E Next.js Validation**: Builds the static export bundle of Next.js and runs Playwright testing to ensure zero regression on UI flows.
-4. **Smart Contract Deployment Workflow**: Continuous verification prevents regressions from being pushed to production.
-
----
-
-## 💻 Local Installation & Getting Started
-
-### 📋 Prerequisites
-- Node.js 22+
-- Cargo + Rust Toolchain (`wasm32-unknown-unknown` target)
-- Freighter Wallet extension installed
-
-### 🛠️ Step-by-Step Setup
-
-1. **Clone the repository**:
+1. **Clone the Repository**
    ```bash
    git clone https://github.com/shampaLa/CopyrightStellar.git
    cd CopyrightStellar
    ```
 
-2. **Configure Environment Variables**:
-   Create a `.env.local` file in the root with the following configuration:
+2. **Environment Configuration**
+   Create a `.env.local` file in the root directory:
    ```env
    NEXT_PUBLIC_REGISTRY_CONTRACT_ID=CDK247D6PUHXDKAJHOTQNPG4V3JKLDYKXIERTONDDH3NMCUPE3PGEFCY
    NEXT_PUBLIC_COOWNERSHIP_CONTRACT_ID=CBM6H2CGIAJDBQ5K5747Z6RQWCP355WVBAF3LH7ECJAX4AOIEUDQLTGX
@@ -124,27 +105,20 @@ Our robust GitHub Actions workflow automates the following on every push/PR to `
    NEXT_PUBLIC_STELLAR_RPC_URL=https://soroban-testnet.stellar.org
    ```
 
-3. **Install Dependencies**:
+3. **Install Dependencies**
    ```bash
    npm install --ignore-scripts
    ```
 
-4. **Run the Development Server**:
+4. **Initialize Local Server**
    ```bash
    npm run dev
    ```
 
-5. **Run the Test Suite**:
-   *   **Frontend Tests**: `npm run test`
-   *   **E2E Tests**: `npm run e2e`
-   *   **Rust Contract Tests**:
-       ```bash
-       cd contracts/registry-contract && cargo test
-       cd contracts/co-ownership-contract && cargo test
-       cd contracts/license-dao-contract && cargo test
-       ```
+5. **Execute Test Suites**
+   - **Frontend:** `npm run test`
+   - **E2E:** `npm run e2e`
+   - **Contracts:** `cargo test` (run within each respective `/contracts/*` directory)
 
----
-
-## 📄 License
-This project is licensed under the MIT License.
+## License
+This software is provided under the [MIT License](./LICENSE).
