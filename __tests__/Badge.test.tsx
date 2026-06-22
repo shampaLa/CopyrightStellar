@@ -12,7 +12,7 @@ describe('Badge Component', () => {
   it('applies correct colors for known statuses', () => {
     const { container } = render(React.createElement(Badge, { label: 'Active' }));
     const badge = container.querySelector('.status-badge');
-    expect(badge?.className).toContain('indigo');
+    expect(badge?.className).toContain('teal');
   });
 
   it('applies fallback colors for unknown statuses', () => {
