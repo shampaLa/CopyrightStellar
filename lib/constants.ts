@@ -1,5 +1,4 @@
-export const STELLAR_RPC_URL =
-  process.env.NEXT_PUBLIC_STELLAR_RPC_URL || 'https://soroban-rpc.testnet.stellar.org';
+export const STELLAR_RPC_URL = 'https://soroban-testnet.stellar.org';
 
 export const HORIZON_URL = 'https://horizon-testnet.stellar.org';
 
