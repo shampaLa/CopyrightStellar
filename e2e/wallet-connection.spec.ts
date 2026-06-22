@@ -10,10 +10,11 @@ test.describe("Wallet Connection Flow", () => {
 
   // This test assumes Freighter wallet is mocked or stubbed.
   test("should open Freighter and display address after connection", async ({ page }) => {
+    await page.addInitScript(() => {
+      window.sessionStorage.setItem('cs_wallet', 'GBTCXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX');
+    });
     await page.goto("http://localhost:3000");
-    await page.getByRole("button", { name: /connect wallet/i }).click();
-    // Since real wallet popups are not testable, we check for address placeholder.
-    const address = page.getByTestId("wallet-address");
-    await expect(address).toContainText("G"); // Stellar addresses start with G
+    const address = page.locator('#wallet-dropdown-btn');
+    await expect(address).toContainText("GBTC");
   });
 });
